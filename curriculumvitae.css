@@ -1,4 +1,4 @@
-﻿html {
+html, body {
     box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: cyan;
@@ -11,32 +11,35 @@ header {
     background-color: navy;
     color: white;
     width: 100%;
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
 }
 #name {
     text-align: center;
     font-size: 48px;
+    margin: 0;
 }
 .personal {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-bottom: 10px;
     text-align: center;
 }
 .cv {
     display: flex;
-    flex-direction: row;
     justify-content: flex-start;
 }
 .sidebar {
-    width: 300px;
-    height: 300vh;
+    min-width: 300px;
+    height: 100%;
+    float: left;
 }
 .sidebar ul {
+    display: block;
     list-style-type: none;
     padding: 0;
     text-align: center;
-    position: fixed;
 }
 .sidebar ul li {
     display: block;
@@ -48,11 +51,12 @@ header {
 }
 .sidebar ul li a:hover {
   color: #fdd835;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 }
 .content {
-    width: 100%;
+    min-width: 60%;
     height: 100%;
+    float: left;
 }
 .category {
     border: 10px solid yellowgreen;
@@ -79,10 +83,8 @@ header {
     border-radius: 10px;
 }
 .job > div {
-    width: 400px;
     text-align: center;
 }
-
 .publist ul {
     padding: 0;
     list-style-type: none;
@@ -90,4 +92,12 @@ header {
 .publist ul li {
     display: block;
     margin: 20px 0;
+}
+@media screen and (max-width: 576px) {
+  .cv {
+    display: block;
+    }
+  .nav { /*I'm stuck tryna justify the buttons to the center*/
+    justify-content: center;  
+    }
 }
